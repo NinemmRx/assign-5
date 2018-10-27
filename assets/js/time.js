@@ -45,7 +45,7 @@ var stopwatch = {
 
     // DONE: Use the variable we just created to show the converted time in the "display" div.
     $("#display").text(converted);
-    if(converted == "00:30")
+    if(converted == "00:31")
      {
          alert("You time is up");
          location.reload();

@@ -1,44 +1,44 @@
 $(document).ready(function() {
     var answerU= [];
    
-    var Friends = [
+    var batman = [
         {
-        question: "What is the name of Joey's agent?",
-        choise:["Gloria","Estelle","Gisella"],
+        question: "What is the name of batman's best super power?",
+        choise:["Laser Beam","Ice Vision","No Powers"],
         image:[],
-        correctAnswer: "Estelle"
+        correctAnswer: "No Powers"
     },
     {
-        question: "What do Monica and Rachel do to get their apartment back?",
-        choise:["Offer footbal tickets", "Paint the walls purple", "Kiss"],
+        question: "What is batmans go to crutch?",
+        choise:["Utility Belt","Robin","His Butler"],
         image:[], 
-        correctAnswer: "Kiss"
+        correctAnswer: "Utility Belt"
     },
     {
-        question: "What color is the couch in Central Perk?",
-        choise:["Orange","Red","Blue"],
+        question: "What makes batman special?",
+        choise:["Nothing","Adaptation","Orphans"],
         image:[], 
-        correctAnswer: "Orange"
+        correctAnswer: "Nothing"
     },
     {
-        question: "What is the name of Ross's monkey?",
-        choise:["Manuel","Maddox","Marcel"],
+        question: "what can take batman out?",
+        choise:["Gun","Knife","Both"],
         image:[], 
-        correctAnswer: "Marcel"
+        correctAnswer: "Both"
     },
     {
-        question: "They don't know that we know that they know we know. Who said it?",
-        choise:["Rachel","Joey","Phoebe"],
+        question: "In what circumstance would batman be able to fight amongst super heros?",
+        choise:["with other hero's","More gadgets","Never"],
         image:[], 
-        correctAnswer: "Phoebe"
+        correctAnswer: "Never"
     }
 ];
        
-     for (var x = 0 ; x <Friends.length; x++)  
+     for (var x = 0 ; x <batman.length; x++)  
      {
         var questionDiv = $("<div>");
-        questionDiv.html(Friends[x].question)
-        console.log(Friends[x].question)
+        questionDiv.html(batman[x].question)
+        console.log(batman[x].question)
         console.log(questionDiv)
         $("#questions").append(questionDiv);   
         for (var i = 0; i < 3; i++) 
@@ -46,9 +46,8 @@ $(document).ready(function() {
                 
                 var answerBtn = $("<button>");
                 answerBtn.addClass("answer-button-color answer-button");
-                answerBtn.val(Friends[x].choise[i]);
-                // answerBtm.attr("data-answer",Friends[0].correctAnswer);
-                answerBtn.text(Friends[x].choise[i]);
+                answerBtn.val(batman[x].choise[i]);
+                answerBtn.text(batman[x].choise[i]);
                 $("#questions").append(answerBtn);   
                  
              }
@@ -56,29 +55,18 @@ $(document).ready(function() {
     }
                 var i = 0;
                 $(".answer-button").on("click", function() {
-               // console.log($(this).val());  
                 answerU.push(($(this).val()));
                 console.log(i);
-                //console.log(answerU)
-                // for(var i = 0 ; i < Friends.length; i++)
-                // {
-                    if (Friends[i].correctAnswer == answerU[i])
+                    if (batman[i].correctAnswer == answerU[i])
                     {
-                        
-                        $("#answer").html( "the answer is right");
-                        //count++;
-                        //console.log(answerU[i]);
-                        //console.log("you did right");
+                        $("#answer").html( "Correct");
                         i=i+1;
-                        //console.log("go to the next question ");
                     }
                     else{
-                        //console.log(Friends[i].correctAnswer);
-                        $("#answer").html("WRONG, the answer is: " + Friends[i].correctAnswer);
+                        $("#answer").html("WRONG: " + batman[i].correctAnswer);
                         i=i+1;
                     }
                    
-            //    }
                 
             });
                 
